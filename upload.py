@@ -4,6 +4,7 @@ from azure.storage.blob import BlobBlock, ContainerClient, __version__, aio
 
 class sample:
 
+    # file generated with fallocate -l $(((4*1024*1024)+1)) FourMbPlus1.txt
     # in the terminal set the environment variable:
     # export AZURE_STORAGE_TEST_SAS_URI="https://<storageaccount>.blob.core.windows.net/test?<access token portion>"
 
