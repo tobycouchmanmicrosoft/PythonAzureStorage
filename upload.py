@@ -96,8 +96,9 @@ class sample:
                             await destination_blob_client.stage_block(block_id=block_id, data=chunk)
                             block_list.append(BlobBlock(block_id=block_id))
                             chunk = data.read(self.blocksize)
-                            await destination_blob_client.commit_block_list(block_list)
                             i = i + 1
+
+                    await destination_blob_client.commit_block_list(block_list)                            
                     properties = await blobclient.get_blob_properties()
                     print("Stored size:" + str(properties.size))
 
